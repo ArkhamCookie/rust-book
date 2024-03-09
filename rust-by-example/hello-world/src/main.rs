@@ -33,4 +33,15 @@ fn main() {
 	let number: f64 = 1.0;
 	let width: usize = 5;
 	println!("{number:>width$}");
+
+	macro_rules! pi_roughly_equals {
+		($a:expr) => {
+			let pi: f64 = 3.141592;
+			let digits: usize = $a;
+			println!("Pi is roughly {pi:.digits$}");
+		};
+	}
+
+	pi_roughly_equals!(1);
+	pi_roughly_equals!(3);
 }
