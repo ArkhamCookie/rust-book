@@ -17,6 +17,8 @@ fn plus_one(x: i32) -> i32 {
 
 // Functions can be defined either before or after the main function.
 fn main() {
+	println!("--- Functions ---");
+
 	another_function(5);
 	print_labeled_measurement(5, 'h');
 
