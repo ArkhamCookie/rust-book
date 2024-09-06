@@ -4,6 +4,6 @@ fn main() {
 	x = 6;
 	println!("The value of x is: {x}");
 
-	const y: u32 = 7;
+	const Y: u32 = 7;
 	println!("The value of y is: {y}");
 }
