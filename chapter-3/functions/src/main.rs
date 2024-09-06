@@ -1,10 +1,11 @@
+fn another_function(x: i32) {
+	println!("The value of x is: {x}");
+}
+
+// Functions can be defined either before or after the main function.
 fn main() {
 	another_function(5);
 	print_labeled_measurement(5, 'h')
-}
-
-fn another_function(x: i32) {
-	println!("The value of x is: {x}");
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
