@@ -11,6 +11,10 @@ fn statements_expressions() {
     println!("The value of y is: {y}");
 }
 
+fn plus_one(x: i32) -> i32 {
+    x + 1
+}
+
 // Functions can be defined either before or after the main function.
 fn main() {
 	another_function(5);
@@ -19,6 +23,12 @@ fn main() {
 	println!("--- Statements and Expressions ---");
 
 	statements_expressions();
+
+	println!("--- Functions with Return Values ---");
+
+	let x = plus_one(7);
+
+	println!("The value of x is: {x}");
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
