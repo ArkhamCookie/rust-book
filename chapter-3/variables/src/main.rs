@@ -5,5 +5,5 @@ fn main() {
 	println!("The value of x is: {x}");
 
 	const Y: u32 = 7;
-	println!("The value of y is: {y}");
+	println!("The value of y is: {Y}");
 }
