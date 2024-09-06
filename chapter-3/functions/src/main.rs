@@ -14,7 +14,7 @@ fn statements_expressions() {
 // Functions can be defined either before or after the main function.
 fn main() {
 	another_function(5);
-	print_labeled_measurement(5, 'h')
+	print_labeled_measurement(5, 'h');
 
 	println!("--- Statements and Expressions ---");
 	statements_expressions();
