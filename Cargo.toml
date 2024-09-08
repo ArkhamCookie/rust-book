@@ -1,0 +1,14 @@
+[workspace]
+
+members = [
+	"chapter-1/hello-cargo",
+	"chapter-2/guessing-game",
+	"chapter-3/control-flow",
+	"chapter-3/data-types",
+	"chapter-3/functions",
+	"chapter-3/variables",
+	"chapter-5/structs",
+	"chapter-6/enums",
+	"chapter-6/if-let",
+	"chapter-6/match-learning"
+]
