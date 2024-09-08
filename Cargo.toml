@@ -1,5 +1,6 @@
 [workspace]
 
+resolver = "2"
 members = [
 	"chapter-1/hello-cargo",
 	"chapter-2/guessing-game",
