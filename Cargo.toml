@@ -18,5 +18,6 @@ members = [
 	"chapter-9/errors",
 	"chapter-10/largest",
 	"chapter-10/generics",
-	"chapter-10/traits"
+	"chapter-10/traits",
+	"chapter-10/validating-references-with-lifetimes"
 ]
