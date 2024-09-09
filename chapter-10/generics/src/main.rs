@@ -1,4 +1,4 @@
-use std::vec;
+// use std::vec;
 
 fn main() {
     println!("--- Generics ---");
