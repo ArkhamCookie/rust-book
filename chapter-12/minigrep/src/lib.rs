@@ -46,17 +46,15 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 
 #[cfg(test)]
 mod tests {
-	const CONTENTS: &str = "\
-Rust:
-safe, fast, productive.
-Pick three.";
-
 	use super::*;
 
 	#[test]
 	fn one_result() {
 		let query = "duct";
-		let contents = CONTENTS;
+		let contents: &str = "\
+Rust:
+safe, fast, productive.
+Pick three.";
 		
 		assert_eq!(vec!["safe, fast, productive."], search(query, contents));
 	}
@@ -64,7 +62,10 @@ Pick three.";
 	#[test]
 	fn multible_results() {
 		let query = "e";
-		let contents = CONTENTS;
+		let contents = "\
+Rust:
+safe, fast, productive.
+Pick three.";
 
 		assert_eq!(vec!["safe, fast, productive.", "Pick three."], search(query, contents));
 	}
