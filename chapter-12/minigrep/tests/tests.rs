@@ -22,7 +22,7 @@ Trust me.";
 		let query = "e";
 		let contents = CONTENT;
 
-		assert_eq!(vec!["safe, fast, productive.", "Pick three."], search(query, contents));
+		assert_eq!(vec!["safe, fast, productive.", "Pick three.", "Duct tape.", "Trust me."], search(query, contents));
 	}
 
 	#[test]
