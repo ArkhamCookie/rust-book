@@ -21,5 +21,6 @@ members = [
 	"chapter-10/traits",
 	"chapter-10/validating-references-with-lifetimes",
 	"chapter-11/adder",
-	"chapter-11/test-modules"
+	"chapter-11/test-modules",
+	"chapter-12/minigrep"
 ]
