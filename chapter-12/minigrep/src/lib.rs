@@ -19,14 +19,53 @@ impl Config {
     }
 }
 
-pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    println!("Searching for {}", config.query);
-    println!("In file {}", config.file_path);
+pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
+	let mut results = Vec::new();
 
+	for line in contents.lines() {
+		if line.contains(query) {
+			results.push(line);
+		}
+	}
+
+	results
+}
+
+pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.file_path)
         .expect("Should be able to read this file");
 
-    println!("With text:\n{contents}");
+	for line in search(&config.query, &contents) {
+		println!("{line}");
+	}
 
     Ok(())
+}
+
+/* Tests */
+
+#[cfg(test)]
+mod tests {
+	const CONTENTS: &str = "\
+Rust:
+safe, fast, productive.
+Pick three.";
+
+	use super::*;
+
+	#[test]
+	fn one_result() {
+		let query = "duct";
+		let contents = CONTENTS;
+		
+		assert_eq!(vec!["safe, fast, productive."], search(query, contents));
+	}
+
+	#[test]
+	fn multible_results() {
+		let query = "e";
+		let contents = CONTENTS;
+
+		assert_eq!(vec!["safe, fast, productive.", "Pick three."], search(query, contents));
+	}
 }
