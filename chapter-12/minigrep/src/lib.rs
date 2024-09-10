@@ -39,6 +39,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
 	results
 }
 
+// TODO: Allow being triggered with arguments
 pub fn search_case_insensitive<'a>(
 	query: &str,
 	contents: &'a str
