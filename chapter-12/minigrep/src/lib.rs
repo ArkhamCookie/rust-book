@@ -3,13 +3,15 @@ use std::error::Error;
 use std::fs;
 use std::path;
 
-use clap::Parser;
+use clap::{ArgAction, Parser};
 
 #[derive(Parser)]
 pub struct Cli {
     pub query: String,
     pub file_path: path::PathBuf,
-	// pub debug: u8,
+
+	#[arg(short, long, action = ArgAction::SetTrue)]
+	pub verbose: bool,
     // pub ignore_case: bool,
 }
 
@@ -40,6 +42,10 @@ pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a st
 }
 
 pub fn run(cli: Cli) -> Result<(), Box<dyn Error>> {
+	if cli.verbose {
+		println!("Querying for '{}' in `{:?}`.", cli.query, cli.file_path);
+	}
+
     let contents = fs::read_to_string(cli.file_path).expect("Should be able to read this file");
 
     // let results = if cli.ignore_case {
