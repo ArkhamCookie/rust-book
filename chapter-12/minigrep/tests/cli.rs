@@ -30,3 +30,15 @@ fn find_content_in_file() -> Result<(), Box<dyn error::Error>> {
 
 	Ok(())
 }
+
+#[test]
+fn no_match_in_file() -> Result<(), Box<dyn error::Error>> {
+	let file = "tests/data/poem.txt";
+	let mut cmd = Command::cargo_bin("minigrep")?;
+
+	cmd.arg("Frog").arg(file);
+
+	cmd.assert().success().stdout("");
+
+	Ok(())
+}
