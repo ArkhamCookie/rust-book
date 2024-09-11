@@ -1,5 +1,5 @@
 #[cfg(test)]
-use minigrep::*;
+use minigrep::search;
 
 const CONTENT: &str = "\
 Rust:
@@ -13,7 +13,7 @@ fn one_result() {
 	let query = "three";
 	let contents = CONTENT;
 
-	assert_eq!(vec!["Pick three."], search(query, contents));
+	assert_eq!(vec!["Pick three."], search::default(query, contents));
 }
 
 #[test]
@@ -28,7 +28,7 @@ fn multible_results() {
 			"Duct tape.",
 			"Trust me."
 		],
-		search(query, contents)
+		search::default(query, contents)
 	);
 }
 
@@ -37,7 +37,7 @@ fn case_sensitive() {
 	let query = "duct";
 	let contents = CONTENT;
 
-	assert_eq!(vec!["safe, fast, productive."], search(query, contents));
+	assert_eq!(vec!["safe, fast, productive."], search::default(query, contents));
 }
 
 #[test]
@@ -47,6 +47,6 @@ fn case_insensitive() {
 
 	assert_eq!(
 		vec!["Rust:", "Trust me."],
-		search_case_insensitive(query, contents)
+		search::case_insensitive(query, contents)
 	);
 }
