@@ -24,9 +24,7 @@ fn find_content_in_file() -> Result<(), Box<dyn error::Error>> {
 
 	cmd.arg("frog").arg(file);
 
-	cmd.assert()
-		.success()
-		.stdout("How public, like a frog\n");
+	cmd.assert().success().stdout("How public, like a frog\n");
 
 	Ok(())
 }

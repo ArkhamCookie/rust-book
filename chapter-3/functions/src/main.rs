@@ -4,15 +4,15 @@ fn another_function(x: i32) {
 
 fn statements_expressions() {
 	let y = {
-        let x = 3;
-        x + 1
-    };
+		let x = 3;
+		x + 1
+	};
 
-    println!("The value of y is: {y}");
+	println!("The value of y is: {y}");
 }
 
 fn plus_one(x: i32) -> i32 {
-    x + 1
+	x + 1
 }
 
 // Functions can be defined either before or after the main function.
@@ -34,5 +34,5 @@ fn main() {
 }
 
 fn print_labeled_measurement(value: i32, unit_label: char) {
-    println!("The measurement is: {value}{unit_label}");
+	println!("The measurement is: {value}{unit_label}");
 }

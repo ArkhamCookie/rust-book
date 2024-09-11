@@ -1,45 +1,45 @@
 fn main() {
-    println!("--- Strings ---");
+	println!("--- Strings ---");
 
-    let s = String::new();
+	let s = String::new();
 
-    println!("{s}");
+	println!("{s}");
 
-    let data = "intial contents";
-    let mut s = data.to_string();
+	let data = "intial contents";
+	let mut s = data.to_string();
 
-    println!("{s}");
+	println!("{s}");
 
-    s = "intial contents".to_string();
-    
-    println!("{s}");
+	s = "intial contents".to_string();
 
-    s = String::from("foo");
+	println!("{s}");
 
-    s.push_str("bar");
+	s = String::from("foo");
 
-    println!("{s}");
+	s.push_str("bar");
 
-    s = String::from("lo");
+	println!("{s}");
 
-    // Can only push one character
-    s.push('l');
+	s = String::from("lo");
 
-    println!("{s}");
+	// Can only push one character
+	s.push('l');
 
-    let s1 = String::from("tic");
-    let s2 = String::from("tac");
-    let s3 = String::from("toe");
+	println!("{s}");
 
-    s = format!("{s1}-{s2}-{s3}");
+	let s1 = String::from("tic");
+	let s2 = String::from("tac");
+	let s3 = String::from("toe");
 
-    println!("{s}");
+	s = format!("{s1}-{s2}-{s3}");
 
-    for c in "Зд".chars() {
-        println!("{c}");
-    }
+	println!("{s}");
 
-    for b in "Зд".bytes() {
-        println!("{b}");
-    }
+	for c in "Зд".chars() {
+		println!("{c}");
+	}
+
+	for b in "Зд".bytes() {
+		println!("{b}");
+	}
 }
