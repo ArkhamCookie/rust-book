@@ -16,3 +16,17 @@ fn file_doesnt_exist() -> Result<(), Box<dyn error::Error>> {
 
 	Ok(())
 }
+
+#[test]
+fn find_content_in_file() -> Result<(), Box<dyn error::Error>> {
+	let file = "tests/data/poem.txt";
+	let mut cmd = Command::cargo_bin("minigrep")?;
+
+	cmd.arg("frog").arg(file);
+
+	cmd.assert()
+		.success()
+		.stdout("How public, like a frog\n");
+
+	Ok(())
+}
