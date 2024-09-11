@@ -12,7 +12,8 @@ pub struct Cli {
 
 	#[arg(short, long, action = ArgAction::SetTrue)]
 	pub verbose: bool,
-    // pub ignore_case: bool,
+	#[arg(short, long, action = ArgAction::SetTrue)]
+    pub ignore_case: bool,
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
@@ -27,7 +28,6 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     results
 }
 
-// TODO: Allow being triggered with arguments
 pub fn search_case_insensitive<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let query = query.to_lowercase();
     let mut results = Vec::new();
@@ -48,13 +48,11 @@ pub fn run(cli: Cli) -> Result<(), Box<dyn Error>> {
 
     let contents = fs::read_to_string(cli.file_path).expect("Should be able to read this file");
 
-    // let results = if cli.ignore_case {
-    //     search_case_insensitive(&cli.query, &contents)
-    // } else {
-    //     search(&cli.query, &contents)
-    // };
-
-	let results = search(&cli.query, &contents);
+    let results = if cli.ignore_case {
+        search_case_insensitive(&cli.query, &contents)
+    } else {
+        search(&cli.query, &contents)
+    };
 
     for line in results {
         println!("{line}");
