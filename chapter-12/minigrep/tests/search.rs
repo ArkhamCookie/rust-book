@@ -37,7 +37,10 @@ fn case_sensitive() {
 	let query = "duct";
 	let contents = CONTENT;
 
-	assert_eq!(vec!["safe, fast, productive."], search::default(query, contents));
+	assert_eq!(
+		vec!["safe, fast, productive."],
+		search::default(query, contents)
+	);
 }
 
 #[test]
