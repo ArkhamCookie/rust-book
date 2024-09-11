@@ -1,7 +1,6 @@
 use std::process;
-
-use minigrep::{Cli, run};
 use clap::Parser;
+use minigrep::{run, Cli};
 
 fn main() {
     let args = Cli::parse();
