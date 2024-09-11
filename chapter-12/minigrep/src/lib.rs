@@ -12,9 +12,9 @@ pub struct Cli {
     pub file_path: path::PathBuf,
 
     #[arg(short, long, action = ArgAction::SetTrue)]
-    pub verbose: bool,
-    #[arg(short, long, action = ArgAction::SetTrue)]
     pub ignore_case: bool,
+    #[arg(short, long, action = ArgAction::SetTrue)]
+    pub verbose: bool,
 }
 
 pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
