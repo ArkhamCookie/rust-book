@@ -24,5 +24,6 @@ members = [
 	"chapter-11/test-modules",
 	"chapter-12/minigrep",
 	"chapter-13/closures",
-	"chapter-13/iterators"
+	"chapter-13/iterators",
+	"chapter-14/crates"
 ]
