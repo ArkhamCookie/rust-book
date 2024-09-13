@@ -1,0 +1,8 @@
+[package]
+name = "crates"
+version = "0.1.0"
+edition = "2021"
+description = "A crate for learning about publishing on crates.io."
+license = "MIT"
+
+[dependencies]
